@@ -1,0 +1,127 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[mode=buildnew]{standalone}
+\usetikzlibrary{positioning, automata, fit, shapes, chains}
+\usetheme{Madrid}
+\usecolortheme{orchid}
+\usefonttheme[]{professionalfonts}
+  
+
+%Information to be included in the title page:
+\title[Beamer Workshop]{UB INFORMS Beamer Workshop}
+\author[Papazaharias, D.]{Demetrios Papazaharias\inst{1}}
+\institute[UB]{\inst{1}University at Buffalo}
+\date{October 21, 2020}
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\logo{\includegraphics[scale=0.03]{crestUB.png}}
+
+% ------ End Preamble -------
+
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+
+\begin{frame}{Frame Title}
+This is a text in the first frame.
+\end{frame}
+
+\section{Section 1}
+
+\begin{frame}{Bullet Lists}
+
+    This is a bullet list, with effects.
+    \begin{itemize}\setlength\itemsep{1em}
+        \item<1-> Text on slide 1-4
+        \item<2-> Text on slide 2-4
+        \item<3> Text only on slide 3
+        \item<4-> Text on slide 4
+    \end{itemize}
+    
+\end{frame}
+
+\section{Section 2}
+
+\begin{frame}{Blocks for Emphasis}
+    \begin{block}{Remark}
+        Sample remark
+    \end{block}
+
+    \begin{alertblock}{Theorem}        
+        Sample theorem in red
+    \end{alertblock}
+    
+    \begin{example}
+        Examples are shown in green
+    \end{example}
+\end{frame}
+
+\begin{frame}{Columns}
+    \begin{columns}
+        \column{0.5\textwidth}
+        First column text
+        $$ \sum_{j \in \delta^+(i)} x_{ij} - \sum_{j \in \delta^-(i)} x_{ji} = b_i$$
+        
+        \begin{itemize}
+            \item First item
+            \item Second item
+        \end{itemize}
+
+        \column{0.5\textwidth}
+        Second column text. Second column provides a nice layout
+    \end{columns}
+\end{frame}
+
+\begin{frame}[t]{Overlay Area}
+    %\input{img/standalone.tex}
+    \begin{itemize}
+        \item Use \texttt{overlayarea} environment in order to sequence images without them ``dancing'' on the slide
+    \end{itemize}
+    \begin{overlayarea}{\textwidth}{4cm}
+        \only<1>{
+            \begin{center}
+                \includestandalone[mode=image, page=1]{img/standalone}
+            \end{center}
+        }
+        \only<2>{
+            \begin{center}
+                \includestandalone[mode=image, page=2]{img/standalone}
+            \end{center}
+        }
+        \only<3>{
+            \begin{center}
+                \includestandalone[mode=image, page=3]{img/standalone}
+            \end{center}
+        }
+        \only<4>{
+            \begin{center}
+                \includestandalone[mode=image, page=4]{img/standalone}
+            \end{center}
+        }
+        \only<5>{
+            \begin{center}
+                \includestandalone[mode=image, page=5]{img/standalone}
+            \end{center}
+        }
+    \end{overlayarea}
+\end{frame} 
+
+\end{document}
