@@ -10,4 +10,4 @@ A workshop on the beamer document class for Latex. Presented by the UB INFORMS s
 
 ## Acknowledgements
 
-Special thanks to Dr. Jose L. Walteros for sharing his UB Beamer template.
+Special thanks to [Dr. Jose L. Walteros](https://github.com/jwalteros) for sharing his UB Beamer template.
